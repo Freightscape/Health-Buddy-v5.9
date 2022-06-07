@@ -7,6 +7,7 @@ const morgan = require('morgan')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const path = require('path')
+const { stringify } = require('querystring')
 
 /////////////////////////////////////////////
 // Database Connection
@@ -26,3 +27,19 @@ mongoose.connection
   .on("open", () => console.log("Connected to Mongoose"))
   .on("close", () => console.log("Disconnected from Mongoose"))
   .on("error", (error) => console.log(error));
+
+////////////////////////////////////////////////
+// Our Models
+////////////////////////////////////////////////
+// pull schema and model from mongoose
+const { Schema, model } = mongoose
+// upper line is combined of these 2 lines
+// const Schema = mongoose.Schema
+// const model = mogoose.model
+
+// make fruis schema
+const fruitsSchema = new Schema({
+    name: string,
+    color: string,
+    readyToEat: Boolean
+})
