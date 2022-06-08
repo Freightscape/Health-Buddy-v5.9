@@ -17,6 +17,7 @@ const fruitsSchema = new Schema({
   name: String,
   color: String,
   readyToEat: Boolean,
+  username: String
 });
 
 // make fruit model
