@@ -5,10 +5,10 @@ const express = require("express");
 const morgan = require("morgan");
 const methodOverride = require("method-override");
 const path = require("path");
-const FruitRouter = require('./controllers/fruits')
+const FoodRouter = require("./controllers/foods");
 const UserRouter = require("./controllers/users");
-const session = require('express-session')
-const MongoStore = require('connect-mongo');
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const { Store } = require("express-session");
 
 /////////////////////////////////////////////////
@@ -29,22 +29,24 @@ app.use(morgan("tiny")); //logging
 app.use(methodOverride("_method")); // override for put and delete requests from forms
 app.use(express.urlencoded({ extended: true })); // parse urlencoded request bodies
 app.use(express.static("public")); // serve files from public statically
-app.use(session({
-  secret: process.env.SECRET,
+app.use(
+  session({
+    secret: process.env.SECRET,
     store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
     saveUninitialized: true,
     resave: false,
-}))
+  })
+);
 
 ////////////////////////////////////////////
 // Routes
 ////////////////////////////////////////////
-app.use('/fruits', FruitRouter) // send all "/fruits" routes to fruit router
-app.use('/user', UserRouter)
+app.use("/day", FoodRouter); // send all "/fruits" routes to fruit router
+app.use("/user", UserRouter);
 
 app.get("/", (req, res) => {
   // res.send("your server is running... better catch it.");
-  res.render('index')
+  res.render("index");
 });
 
 //////////////////////////////////////////////

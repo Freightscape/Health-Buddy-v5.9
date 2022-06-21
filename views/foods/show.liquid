@@ -1,0 +1,23 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <article>
+    <h3>Welcome back, {{ food.username }}
+      <div id="current_date"></p>
+        <script>
+        document.getElementById("current_date").innerHTML = Date();
+        </script>
+    </h3>
+    <h2>{{ food.food }}</h2>
+    <h3>{{ food.calories }} Calories</h3>
+    <h3>{{ food.protien }} g Protien</h3>
+    <h3>{{ food.fat }} g Fat</h3>
+    <h3>{{ food.carbs }} g Carbohydrates</h3>
+    <!-- <h3>{{ fruit.day }} Entry</h3> -->
+    <a href="/day/{{ food._id }}/edit"><button>Edit</button></a>
+    <form action="/day/{{ food._id }}?_method=DELETE" method="POST">
+      <input type="submit" value="Delete" />
+    </form>
+    <a href="/day/"><button>Back to Main</button></a>
+  </article>
+</div>
+{% endblock %}

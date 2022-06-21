@@ -1,0 +1,19 @@
+{% layout "layout.liquid" %} {% block content %}
+<!-- <div id="current_date"></p>
+  <script>
+  document.getElementById("current_date").innerHTML = Date();
+  </script> -->
+<div>
+  <a href="/day/new/{{ id }}"><button>Create New Food Entry</button></a>
+  {% for food in day.foodEntries %}
+  <article>
+    <a href="/day/foods/{{ food._id }}">
+      <h2 style="color: #273b91">
+        {{ food.food }}
+      </h2>
+    </a>
+  </article>
+  {% endfor %}
+  <a href="/user/logout"><button>Logout</button></a>
+</div>
+{% endblock %}

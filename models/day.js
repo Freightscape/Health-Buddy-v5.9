@@ -8,23 +8,21 @@ const mongoose = require("./connection");
 ////////////////////////////////////////////////
 // pull schema and model from mongoose
 const { Schema, model } = mongoose;
-// upper line is combined of these 2 lines
-// const Schema = mongoose.Schema
-// const model = mogoose.model
 
-// make fruis schema
-const fruitsSchema = new Schema({
-  name: String,
-  color: String,
-  readyToEat: Boolean,
-  username: String
+// make day schema
+// const mongoose = require("mongoose");
+
+//schema
+const daySchema = new Schema({
+  comment: { type: String },
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
+  foodEntries: [{ type: Schema.Types.ObjectId, ref: "Food" }],
+  username: String,
 });
 
-// make fruit model
-const Fruit = model("Fruit", fruitsSchema);
-
-
+const Day = model("Day", daySchema);
 ///////////////////////////////////////////////////
 // Export Model
 ///////////////////////////////////////////////////
-module.exports = Fruit
+module.exports = Day;

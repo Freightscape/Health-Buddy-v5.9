@@ -1,0 +1,19 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <form action="/day/{{ day._id }}?_method=PUT" method="post">
+    <fieldset>
+      <legend>Edit {{ day.comment }}</legend>
+      <label>
+        COMMENT:<input
+          type="text"
+          name="comment"
+          placeholder="How your day went."
+          value="{{ day.comment }}"
+        />
+      </label>
+    </fieldset>
+    <input type="submit" value="Edit {{ day.day }}" />
+    <input type="button" value="Go back!" onclick="history.back()" />
+  </form>
+</div>
+{% endblock %}

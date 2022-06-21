@@ -1,0 +1,29 @@
+{% layout "layout.liquid" %} {% block content %}
+<!-- <div id="current_date"></p>
+  <script>
+  document.getElementById("current_date").innerHTML = Date();
+  </script> -->
+<div>
+  <a href="/day/newday"><button>Add Day Entry</button></a>
+  {% for d in days %}
+  <article>
+    <a href="/day/{{ d._id }}">
+      <h2 style="color: #273b91">
+        {{ d.createdAt }}
+      </h2>
+      {{ d.comment }}
+    </a>
+  </article>
+
+  <form action="/day/{{ d._id }}?_method=DELETE" method="POST">
+    <input
+      type="button"
+      value="Edit"
+      onclick="location.href = '/day/{{ d._id }}/edits'"
+    />
+    <input type="submit" value="Delete" />
+  </form>
+  {% endfor %}
+  <a href="/user/logout"><button>Logout</button></a>
+</div>
+{% endblock %}

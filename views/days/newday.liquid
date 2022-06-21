@@ -1,0 +1,27 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <form action="/day/newday" method="post">
+    <fieldset>
+      <legend>Create a New Day</legend>
+      <label>
+        COMMENT:<input
+          type="text"
+          name="comment"
+          placeholder="How your day went."
+        />
+      </label>
+      <!-- <label>
+        STars:<input type="text" name="comment" placeholder="How your day went." />
+      </label> -->
+      <!-- <label>
+        Check if Satiated:<input type="checkbox" name="satiating" />
+      </label> -->
+    </fieldset>
+    <input
+      type="submit"
+      value="create New Day review"
+      onclick="location.href = '/day'"
+    />
+  </form>
+</div>
+{% endblock %}

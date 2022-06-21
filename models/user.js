@@ -1,31 +1,31 @@
 /////////////////////////////////////////////
 // Import Our Dependencies
 /////////////////////////////////////////////
-const mongoose = require('./connection')
+const mongoose = require("./connection");
 
 /////////////////////////////////////////////
 // Define Model
 /////////////////////////////////////////////
 // pull schema and model from mongoose
-const { Schema, model } = mongoose
+const { Schema, model } = mongoose;
 
 // make user schema
-const userSchema = new Schema ({
-    username: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    password: {
-        type: String,
-        required: true
-    }
-})
+const userSchema = new Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+});
 
 // make user model
-const User = model('User', userSchema)
+const User = model("User", userSchema);
 
 ///////////////////////////////////////////////////
 // Export Model
 ///////////////////////////////////////////////////
-module.exports = User
+module.exports = User;

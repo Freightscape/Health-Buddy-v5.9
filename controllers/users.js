@@ -48,8 +48,8 @@ router.post("/login", async (req, res) => {
   //   res.send("login");
   // get data from the request body
   const { username, password } = req.body; // search for user
-//   User.findOne({ username: username })
-// shortcut when username field is same name as 'username'
+  //   User.findOne({ username: username })
+  // shortcut when username field is same name as 'username'
   User.findOne({ username })
     .then(async (user) => {
       // check if user exists
@@ -57,11 +57,11 @@ router.post("/login", async (req, res) => {
         // compare password
         const result = await bcrypt.compare(password, user.password);
         if (result) {
-            // store some properties in the session object
-            req.session.username = username
-            req.session.loggedIn = true
+          // store some properties in the session object
+          req.session.username = username;
+          req.session.loggedIn = true;
           // redirect to fruits page if successful
-          res.redirect("/fruits");
+          res.redirect("/foods");
         } else {
           // error if password doesn't match
           res.json({ error: "password doesn't match" });
@@ -79,12 +79,11 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/logout", (req, res) => {
-    // destroy session and redirect to main page
-    req.session.destroy((err) => {
-      res.redirect("/");
-    });
+  // destroy session and redirect to main page
+  req.session.destroy((err) => {
+    res.redirect("/");
   });
-  
+});
 
 //////////////////////////////////////////
 // Export the Router

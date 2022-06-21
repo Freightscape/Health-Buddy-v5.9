@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Fruits Website</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthBudy v5.9</title>
     <!-- Milligram CSS for Some Default Styling -->
     <!-- Google Fonts -->
     <link
@@ -30,17 +30,118 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = '9765747ec96d1fac80019d5fa46f4cdd14519707';
+      window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+      })(document);
+      </script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="css/style.css" />
     <!-- OUR CSS AND JS -->
     <link rel="stylesheet" href="/styles.css" />
     <script src="/app.js" defer></script>
-</head>
-<body>
-    <header>
-        <h1>The Fruits App</h1>
-      </header>
-  
-      <main>{% block content %}My default content{% endblock %}</main>
-  
-      <footer></footer>
-</body>
+
+
+  </head>
+  <body>
+    <!-- <header>
+      <div class="inner-width">
+        <h1 class="logo">Health<span style="color:#273b91;">Buddy</span>5.9</h1>
+        <nav class="navigation-menu" style="float: right; padding: 0px 16px;">
+          <a href="/day/"><i class="fas fa-home home"></i> Home</a>
+          <a href="https://www.linkedin.com/in/tiras-jordan/"></i> About</a>
+          <a href="#"></i> Resources</a>
+          <a href="#"></i> FAQ</a>
+          <a href="#"></i> Contact</a>
+          <a href="#" class="aj_btn"> <i class="fas fa-lock" aria-hidden="true"></i>
+            LOGIN</a>
+        </nav>
+      </div>  
+    </header> -->
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg bg-light navbar-light">
+          <div class="container">
+            <a href="#" class="navbar-brand"
+              >Health<span class="text-primary">Buddy</span>v5.9</a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navmenu"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navmenu">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a href="/day/" class="nav-link" href="/day/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#learn" class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#learn" class="nav-link" href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    <h3>Welcome back, {{ food.username }}
+        <div id="current_date"></p>
+          <script>
+          document.getElementById("current_date").innerHTML = Date();
+          </script>
+    </h3>
+    <main>{% block content %}My default content{% endblock %}</main>
+    <!-- src="https://platform.linkedin.com/badges/js/profile.js" -->
+
+    <section class="bg-light text-dark p-5 text-center">
+      <div class="container">
+        <div>
+          <div>
+            <h1>
+              Welcome to your Health<span class="text-primary">Buddy</span>v5.9
+            </h1>
+          </div>
+        </div>
+      </div>
+      <img src="img/workit.jpeg" alt="" class="navbar-nav mr-auto" />
+    </section>
+    
+    <footer>
+      <script
+      
+      async
+      defer
+      type="text/javascript"
+    ></script>
+    <div
+      class="badge-base LI-profile-badge"
+      data-locale="en_US"
+      data-size="medium"
+      data-theme="light"
+      data-type="VERTICAL"
+      data-vanity="tiras-jordan"
+      data-version="v1"
+    >
+      <a
+        class="badge-base__link LI-simple-link"
+        href="https://www.linkedin.com/in/tiras-jordan?trk=profile-badge"
+        >Tiras Jordan</a
+      >
+    </footer>
+  </body>
 </html>

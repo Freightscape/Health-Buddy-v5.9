@@ -1,0 +1,35 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <form action="/day/foods/{{ dayid }}" method="post">
+    <fieldset>
+      <legend>Create a New Food</legend>
+      <label>
+        FOOD:<input type="text" name="food" placeholder="Name of food" />
+      </label>
+      <label>
+        CALORIES:<input type="number" name="calories" placeholder="Calories" />
+      </label>
+      <label>
+        PROTIEN:<input
+          type="number"
+          name="protien"
+          placeholder="Protien in grams"
+        />
+      </label>
+      <label>
+        FAT:<input type="number" name="fat" placeholder="enter food name" />
+      </label>
+      <label>
+        CARBS:<input type="number" name="carbs" placeholder="enter food name" />
+      </label>
+      <label>
+        MEAL:<input type="text" name="name" placeholder="enter food name" />
+      </label>
+      <!-- <label>
+        Check if Satiated:<input type="checkbox" name="satiating" />
+      </label> -->
+    </fieldset>
+    <input type="submit" value="create new food" />
+  </form>
+</div>
+{% endblock %}
